@@ -1,0 +1,4 @@
+o/
+Build.Local.cmake
+CMakeUserPresets.json
+*.user

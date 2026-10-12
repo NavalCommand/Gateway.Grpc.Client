@@ -1,0 +1,26 @@
+# Explicit representable options from ../Docs/CodeStyle.xml.
+# LLVM supplies unspecified details; naming/one-type-per-file require human review.
+BasedOnStyle: LLVM
+UseTab: Always
+IndentWidth: 4
+TabWidth: 4
+ColumnLimit: 180
+InsertBraces: true
+AllowShortFunctionsOnASingleLine: None
+AllowShortBlocksOnASingleLine: Never
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortLambdasOnASingleLine: None
+SortIncludes: CaseSensitive
+BreakBeforeBraces: Allman
+NamespaceIndentation: All
+FixNamespaceComments: false
+PointerAlignment: Left
+ReferenceAlignment: Left
+BraceWrapping:
+  AfterExternBlock: true
+IndentExternBlock: Indent
+BinPackParameters: OnePerLine
+BinPackArguments: false
+AllowShortEnumsOnASingleLine: false
+AccessModifierOffset: -4
