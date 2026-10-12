@@ -6,3 +6,8 @@ target_link_libraries(NavalCommand.Gateway.Grpc.Client.Test PRIVATE
     NavalCommand.Gateway.Grpc.Client NavalCommand.Gateway.Grpc.Mock GTest::gtest_main)
 NavalCommandConfigureTarget(NavalCommand.Gateway.Grpc.Client.Test)
 gtest_discover_tests(NavalCommand.Gateway.Grpc.Client.Test DISCOVERY_MODE PRE_TEST)
+
+# Explicit development executable; never registered as an unattended CTest.
+add_executable(NavalCommand.Gateway.Grpc.Client.LiveProbe NavalCommand/Gateway/Grpc/Client/LiveProbe.cpp)
+target_link_libraries(NavalCommand.Gateway.Grpc.Client.LiveProbe PRIVATE NavalCommand.Gateway.Grpc.Client)
+NavalCommandConfigureTarget(NavalCommand.Gateway.Grpc.Client.LiveProbe)
