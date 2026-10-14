@@ -5,6 +5,7 @@
 #undef GetCurrentTime
 #endif
 
+#include <NavalCommand/Classification/Api/Alignment.h>
 #include <NavalCommand/Environment/Api/ITimeProvider.h>
 #include <NavalCommand/Equipment/Api/IProvider.h>
 #include <NavalCommand/Factions/Api/IProvider.h>
@@ -57,7 +58,7 @@ namespace NavalCommand::Gateway::Grpc::Client
 		Error::Api::Result<Observations::Api::Instance> GetObservationInstance(const Observations::Api::Id& id) const override;
 		Error::Api::Result<Operations::Api::UnitState> GetUnitOperations(const Units::Api::Id& id) const override;
 		Error::Api::Result<std::vector<Factions::Api::Id>> GetFactionIds() override;
-		Error::Api::DomainResult<Factions::Api::Alignment, Factions::Api::Error> GetFactionAlignment(const Factions::Api::Id& id, const Factions::Api::Id& second) override;
+		Error::Api::DomainResult<Classification::Api::Alignment, Factions::Api::Error> GetFactionAlignment(const Factions::Api::Id& id, const Factions::Api::Id& second) override;
 		Error::Api::Result<std::vector<Units::Api::TypeId>> GetUnitTypeIds() override;
 		Error::Api::Result<Units::Api::Type> GetUnitType(const Units::Api::TypeId& id) override;
 		Error::Api::Result<std::vector<Equipment::Api::TypeId>> GetEquipmentTypes() override;

@@ -1,3 +1,4 @@
+#include <NavalCommand/Classification/Api/Alignment.h>
 #include <NavalCommand/Error/Api/MakeError.h>
 #include <NavalCommand/Gateway/Api/Codec.h>
 #include <NavalCommand/Gateway/Grpc/Client/Connection.h>
@@ -465,9 +466,9 @@ namespace NavalCommand::Gateway::Grpc::Client
 		}
 	}
 
-	Error::Api::DomainResult<Factions::Api::Alignment, Factions::Api::Error> View::GetFactionAlignment(const Factions::Api::Id& id, const Factions::Api::Id& second)
+	Error::Api::DomainResult<Classification::Api::Alignment, Factions::Api::Error> View::GetFactionAlignment(const Factions::Api::Id& id, const Factions::Api::Id& second)
 	{
-		using Result = Error::Api::DomainResult<Factions::Api::Alignment, Factions::Api::Error>;
+		using Result = Error::Api::DomainResult<Classification::Api::Alignment, Factions::Api::Error>;
 		auto response = m_Transport->Read(m_Client, m_Token, Query(Wire::Query::FACTION_ALIGNMENT, id.Value, second.Value));
 		if (!response)
 		{
@@ -487,7 +488,7 @@ namespace NavalCommand::Gateway::Grpc::Client
 			{
 				throw std::invalid_argument("invalid_alignment");
 			}
-			return static_cast<Factions::Api::Alignment>(response->alignment());
+			return static_cast<Classification::Api::Alignment>(response->alignment());
 		}
 		catch (const std::invalid_argument&)
 		{
