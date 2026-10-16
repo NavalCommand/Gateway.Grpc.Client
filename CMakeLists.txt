@@ -7,7 +7,7 @@ FetchContent_Declare(ncbuild GIT_REPOSITORY https://github.com/NavalCommand/Buil
 FetchContent_MakeAvailable(ncbuild)
 include("${ncbuild_SOURCE_DIR}/NavalCommand.Build.CMake.cmake")
 
-NavalCommandAddDependency(https://github.com/NavalCommand/Gateway.Api.git 94cca460b5d44d7c4211a6e8f06a5af3be2b6fd2)
-NavalCommandAddDependency(https://github.com/NavalCommand/Gateway.Grpc.Api.git 82216b583f82fc60d784cc9d1a62b3488a99a88e)
+NavalCommandAddDependency(https://github.com/NavalCommand/Gateway.Api.git fe5ab9f1c30e275bcf98757a74609baa2f989694)
+NavalCommandAddDependency(https://github.com/NavalCommand/Gateway.Grpc.Api.git 3b60b8cafd441d50ef7d333ee94004254a0b0ffc)
 
 NavalCommandConfigureModule()
