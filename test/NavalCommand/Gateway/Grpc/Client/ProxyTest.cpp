@@ -39,6 +39,11 @@ namespace NavalCommand::Gateway::Grpc::Client
 		EXPECT_EQ(contact->Identity.Value, "contact-1");
 		EXPECT_EQ(contact->ObserverFaction.Value, "blue");
 		EXPECT_FALSE(contact->ObservedFaction.IsKnown());
+		ASSERT_NE(contact->Type.GetIf<Classification::Api::Category>(), nullptr);
+		EXPECT_EQ(*contact->Type.GetIf<Classification::Api::Category>(), Classification::Api::Category::SurfaceVessel);
+		EXPECT_FALSE(contact->CurrentLoadout.IsKnown());
+		ASSERT_TRUE(contact->IsDestroyed.IsKnown());
+		EXPECT_FALSE(contact->IsDestroyed.Value());
 		EXPECT_FALSE(contact->Kinematics.Speed.IsKnown());
 		EXPECT_EQ((*red)->GetObservationInstance({"contact-1"})->ObserverFaction.Value, "red");
 	}

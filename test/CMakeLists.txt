@@ -1,4 +1,4 @@
-NavalCommandAddDependency(https://github.com/NavalCommand/Gateway.Grpc.git main)
+NavalCommandAddDependency(https://github.com/NavalCommand/Gateway.Grpc.git 291a296f4d3ee4df1d978038d110c5b3faad116a)
 find_package(GTest CONFIG REQUIRED)
 include(GoogleTest)
 add_executable(NavalCommand.Gateway.Grpc.Client.Test NavalCommand/Gateway/Grpc/Client/ProxyTest.cpp)
